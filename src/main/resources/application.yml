@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/familymatters
-    username: postgres
-    password: C123
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/familymatters}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:devpass}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -15,8 +15,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${confianceufitamahoro22@gmail.com}
-    password: ${zepx qeku kqtx ssrm}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
     properties:
       mail:
         smtp:
@@ -34,9 +34,9 @@ server:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:FamilyMattersFamilyVaultSecretKey2024MustBeAtLeast256BitsLong!!}
+    secret: ${JWT_SECRET:dev-secret-change-in-production}
     expiration-ms: 86400000
   otp:
     expiration-minutes: 10
   cors:
-    allowed-origins: http://localhost:3000,http://10.0.2.2:8080
+    allowed-origins: ${CORS_ORIGINS:http://localhost:3000,http://10.0.2.2:8080}
