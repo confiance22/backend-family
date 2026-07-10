@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM eclipse-temurin:21-jdk AS build
+FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
 COPY gradlew .
 COPY gradle gradle
