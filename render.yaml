@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: family-matters-api
-    env: java
-    plan: free
-    envVars:
-      - key: JWT_SECRET
-        generateValue: true
