@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://db.amavxtwngjihnhuuswtn.supabase.co:5432/postgres}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/familymatters}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    password: ${SPRING_DATASOURCE_PASSWORD:FamilyMatters2024!}
+    password: ${SPRING_DATASOURCE_PASSWORD:devpass}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 3
