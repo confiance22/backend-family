@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/familymatters
+    username: postgres
+    password: C123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${confianceufitamahoro22@gmail.com}
+    password: ${zepx qeku kqtx ssrm}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    date-format: yyyy-MM-dd'T'HH:mm:ss'Z'
+    time-zone: UTC
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:FamilyMattersFamilyVaultSecretKey2024MustBeAtLeast256BitsLong!!}
+    expiration-ms: 86400000
+  otp:
+    expiration-minutes: 10
+  cors:
+    allowed-origins: http://localhost:3000,http://10.0.2.2:8080
