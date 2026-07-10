@@ -1,9 +1,15 @@
 spring:
   main:
     lazy-initialization: true
+    allow-bean-definition-overriding: false
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration
+      - org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration
+      - org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration
+      - org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration
+      - org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration
+      - org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/familymatters}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
@@ -43,9 +49,10 @@ spring:
 
 server:
   port: 8080
-  tomcat:
+  undertow:
     threads:
-      max: 4
+      io: 1
+      worker: 4
 
 app:
   jwt:
