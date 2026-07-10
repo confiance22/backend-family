@@ -1,4 +1,6 @@
 spring:
+  main:
+    lazy-initialization: true
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/familymatters}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
@@ -9,6 +11,7 @@ spring:
       minimum-idle: 1
       connection-timeout: 10000
   jpa:
+    open-in-view: false
     hibernate:
         ddl-auto: update
     show-sql: false
@@ -35,6 +38,9 @@ spring:
 
 server:
   port: 8080
+  tomcat:
+    threads:
+      max: 4
 
 app:
   jwt:
