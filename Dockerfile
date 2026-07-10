@@ -10,5 +10,4 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
 EXPOSE 8080
-ENV JAVA_TOOL_OPTIONS="-Xmx128m -Xms64m -XX:+UseSerialGC -Djava.security.egd=file:/dev/./urandom"
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-Xmx128m", "-Xms64m", "-XX:+UseSerialGC", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]
