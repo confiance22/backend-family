@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/familymatters}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://db.amavxtwngjihnhuuswtn.supabase.co:5432/postgres}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    password: ${SPRING_DATASOURCE_PASSWORD:devpass}
+    password: ${SPRING_DATASOURCE_PASSWORD:FamilyMatters2024!}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+        ddl-auto: update
     show-sql: false
     properties:
       hibernate:
