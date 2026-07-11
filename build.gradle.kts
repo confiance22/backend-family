@@ -26,9 +26,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-    // PostgreSQL
-    runtimeOnly("org.postgresql:postgresql")
-
     // JWT
     implementation("io.jsonwebtoken:jjwt-api:0.12.6")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
@@ -49,6 +46,12 @@ kotlin {
     compilerOptions {
         jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
         freeCompilerArgs.addAll("-Xjsr305=strict")
+    }
+}
+
+tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+    manifest {
+        attributes("Main-Class" to "org.springframework.boot.loader.launch.PropertiesLauncher")
     }
 }
 

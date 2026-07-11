@@ -1,39 +1,3 @@
-spring:
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/familymatters}
-    username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    password: ${SPRING_DATASOURCE_PASSWORD:devpass}
-    driver-class-name: org.postgresql.Driver
-    hikari:
-      maximum-pool-size: 3
-      minimum-idle: 1
-      connection-timeout: 10000
-  jpa:
-    open-in-view: false
-    hibernate:
-        ddl-auto: update
-    show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ${SMTP_USERNAME:}
-    password: ${SMTP_PASSWORD:}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-  jackson:
-    serialization:
-      write-dates-as-timestamps: false
-    date-format: yyyy-MM-dd'T'HH:mm:ss'Z'
-    time-zone: UTC
-
 server:
   port: 3000
 
